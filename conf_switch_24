@@ -1,0 +1,63 @@
+---
+- name: Conf access switches
+  hosts: switches
+
+  tasks:
+    - name: Configuracion banner
+      ios_banner:
+        banner: login
+        text: |
+          ********************************************************************
+          *                                                                  *
+          *                            ADVENTENCIA                           *
+          *                                                                  *
+          * El usuario se encuentra conectado a un dispositivo de la red de  *
+          * EPN, este sistema es de uso exclusivo. El acceso esta autorizado *
+          * solo para administradores del sistema con aprobacion por escrito.*
+          * El acceso no autorizado queda prohibido y sera demandado,        *
+          * la politica y estandar de la Direccion de Tecnologia es clara.   *
+          *                                                                  *
+          *                                                                  *
+          *                              WARNING                             *
+          *                                                                  *
+          * The user is connected to a network device EPN, This system is    *
+          * used exclusively by granted only for system administrators       *
+          * with prior written a pproval. Unauthorized access is prohibited  *
+          * and will be prosecuted. Policies and standards are clear         *
+          * Technology Directorate.                                          *
+          ********************************************************************
+        state: present
+        
+   - name: Merge provided configuration with device configuration
+      ios_l2_interfaces:
+        config:
+        - name: GigabitEthernet0/1
+          mode: access
+          access:
+            vlan: 606
+          voice:
+            vlan: 100
+        - name: GigabitEthernet0/2
+          mode: access
+          access:
+            vlan: 616
+          voice:
+            vlan: 100
+        - name: GigabitEthernet0/3
+          mode: access
+          access:
+            vlan: 626
+          voice:
+            vlan: 100
+        - name: GigabitEthernet0/23
+          mode: trunk
+          trunk:
+            allowed_vlans: all
+            native_vlan: 1
+            encapsulation: dot1q
+        state: merged
+          
+
+
+
+    
