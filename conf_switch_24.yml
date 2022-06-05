@@ -27,8 +27,7 @@
           * Technology Directorate.                                          *
           ********************************************************************
         state: present
-        
-   - name: Merge provided configuration with device configuration
+    - name: Merge provided configuration with device configuration
       cisco.ios.ios_l2_interfaces:
         config:
         - name: GigabitEthernet0/1
