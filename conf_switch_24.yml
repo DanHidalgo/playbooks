@@ -49,8 +49,6 @@
             
           - name: GigabitEthernet0/23
             mode: trunk
-            trunk:
-              native_vlan: 1
         state: merged
           
 
