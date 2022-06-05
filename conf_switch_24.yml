@@ -1,8 +1,10 @@
 ---
 - name: Conf access switches
   hosts: switches
+  
 
   tasks:
+    - 
     - name: Configuracion banner
       ios_banner:
         banner: login
@@ -34,20 +36,17 @@
           mode: access
           access:
             vlan: 606
-          voice:
-            vlan: 100
+          
         - name: GigabitEthernet0/2
           mode: access
           access:
             vlan: 616
-          voice:
-            vlan: 100
+          
         - name: GigabitEthernet0/3
           mode: access
           access:
             vlan: 626
-          voice:
-            vlan: 100
+          
         - name: GigabitEthernet0/23
           mode: trunk
           trunk:
