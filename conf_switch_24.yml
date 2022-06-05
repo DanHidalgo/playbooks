@@ -29,26 +29,26 @@
           * Technology Directorate.                                          *
           ********************************************************************
         state: present
-    - name: Merge provided configuration with device configuration
+    - name: Configuracion de interfaces
       ios_l2_interfaces:
         config:
           - name: GigabitEthernet0/1
-            mode: access
             access:
               vlan: 606
             
           - name: GigabitEthernet0/2
-            mode: access
             access:
               vlan: 616
             
           - name: GigabitEthernet0/3
-            mode: access
             access:
               vlan: 626
             
           - name: GigabitEthernet0/23
-            mode: trunk
+            trunk:
+              allowed_vlans: all
+              encapsulation: dot1q
+              native_vlan: 1
         state: merged
           
 
