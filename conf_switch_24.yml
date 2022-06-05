@@ -46,8 +46,6 @@
             
           - name: GigabitEthernet1/0/23
             trunk:
-              allowed_vlans: all
-              encapsulation: dot1q
               native_vlan: 1
         state: merged
           
