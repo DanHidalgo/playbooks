@@ -59,7 +59,7 @@
           - name: GigabitEthernet1/0/23
             trunk:
               native_vlan: 1
-        state: replaced
+        state: overriden
           
 
 
