@@ -4,7 +4,7 @@
 
   tasks:
     - name: Configuracion banner
-      cisco.ios.ios_banner:
+      ios_banner:
         banner: login
         text: |
           ********************************************************************
@@ -28,7 +28,7 @@
           ********************************************************************
         state: present
     - name: Merge provided configuration with device configuration
-      cisco.ios.ios_l2_interfaces:
+      ios_l2_interfaces:
         config:
         - name: GigabitEthernet0/1
           mode: access
