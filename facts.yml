@@ -2,21 +2,16 @@
 - name: Obtener Informacion
   hosts: switches
   tasks:
-    - name: Gather all legacy facts
+    - name: Reune todos los facts
       ios_facts:
        gather_subset: all
 
-    - name: Gather only the config and default facts
+    - name: Reune solo configuracion
       ios_facts:
         gather_subset:
         - config
 
-    - name: Do not gather hardware facts
+    - name: No reunir informacinon de hardware
       ios_facts:
         gather_subset:
          - '!hardware'
-
-    - name: Gather legacy and resource facts
-      ios_facts:
-        gather_subset: all
-        gather_network_resources: all
