@@ -29,7 +29,7 @@
           * Technology Directorate.                                          *
           ********************************************************************
         state: present
-    - name: Configuracion de interfaces
+    - name: Configuracion de interfaces acceso
       ios_l2_interfaces:
         config:
           - name: GigabitEthernet1/0/1
@@ -43,9 +43,14 @@
           - name: GigabitEthernet1/0/3
             access:
               vlan: 626
-            
+        state: merged
+
+    - name: Configuracion de interfaz trunk
+      ios_l2_interfaces:
+        config:        
           - name: GigabitEthernet1/0/23
             trunk:
+              native_vlan: 1
         state: merged
           
 
