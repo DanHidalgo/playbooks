@@ -52,14 +52,6 @@
             trunk:
               native_vlan: 1
         state: merged
-    
-    - name: Configuracion de interfaz trunk
-      ios_l2_interfaces:
-        config:        
-          - name: GigabitEthernet1/0/23
-            trunk:
-              native_vlan: 1
-        state: overridden
           
 
 
