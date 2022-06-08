@@ -11,7 +11,7 @@
         gather_subset:
         - config
 
-    - name: No reunir informacinon de hardware
+    - name: No recolectar informacion de hardware
       ios_facts:
         gather_subset:
          - '!hardware'
