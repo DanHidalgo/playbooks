@@ -37,7 +37,7 @@
               vlan: 616            
           - name: GigabitEthernet1/0/3
             access:
-              vlan: 626
+              vlan: 600
         state: merged
     - name: Configuracion de interfaz trunk
       ios_l2_interfaces:
