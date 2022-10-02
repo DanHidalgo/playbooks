@@ -42,7 +42,7 @@
         config:
           - name: GigabitEthernet1/0/1
             access:
-              vlan: 600            
+              vlan: 601            
           - name: GigabitEthernet1/0/2
             access:
               vlan: 600          
